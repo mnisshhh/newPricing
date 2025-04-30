@@ -12,6 +12,15 @@ st.sidebar.header("🔧 Settings")
 custom_rate = st.sidebar.number_input("Custom Charge (%)", value=6.0, step=0.1)
 international_rate = st.sidebar.number_input("International Courier Rate (₹/kg)", value=170.0, step=1.0)
 
+# Provide download button for the template
+with open("GDIN_TEMPELATE.xlsx", "rb") as template_file:
+    st.download_button(
+        label="📤 Download Excel Template",
+        data=template_file,
+        file_name="GDIN_TEMPELATE.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
 # Domestic slabs
 st.sidebar.subheader("Domestic Courier Slabs")
 domestic_slabs = [
